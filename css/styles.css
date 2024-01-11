@@ -1,0 +1,275 @@
+body,
+h1,
+h2,
+p,
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+header {
+    background: #f0f0f0;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style: none;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    transition: padding 0.3s ease;
+}
+
+nav ul li:hover {
+    background: lightblue;
+    border-radius: 6px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.hero {
+    background: lightblue;
+    padding: 40px 20px;
+    text-align: center;
+    width: 93%;
+    border-radius: 12px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero h1{
+    font-size: 30px;
+}
+
+.content {
+    padding: 20px;
+    background: #fff;
+}
+
+article {
+    margin-bottom: -20px;
+    padding: 20px;
+    border-bottom: 2px solid lightblue;
+}
+
+article h2,
+article p {
+    display: flex;
+    justify-content: center;
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: lightblue;
+}
+
+@media (min-width: 600px) {
+    nav ul li {
+        display: inline-block;
+    }
+}
+
+/* 健康生活方式页面 */
+.hero-healthy-living {
+    background: #9cbea3;
+}
+
+@media (min-width: 600px) {}
+
+/* 营养饮食页面 */
+nav ul li a.active {
+    color: rgb(94, 192, 224);
+    font-weight: bold;
+}
+
+.text-content {
+    text-align: justify;
+}
+
+@media (min-width: 600px) {
+    .content-image {
+        float: left;
+        width: 100;
+        margin-right: 40px;
+        margin-bottom: 0;
+    }
+
+    .text-content {
+        overflow: hidden;
+    }
+}
+
+article::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* 健身锻炼 */
+.hero-fitness {
+    background: #a3bebe;
+    /* A cool blue color */
+}
+
+/* Content layout styles */
+.content {
+    display: flex;
+    flex-direction: column;
+    /* Stack articles vertically */
+    gap: 20px;
+    /* Space between articles */
+    padding-top: 0;
+}
+
+article {
+    display: flex;
+    flex-direction: row;
+    /* Arrange image and text side by side */
+    align-items: center;
+}
+
+article .content-image {
+    width: 100%;
+    /* Image takes up half of the article */
+    transition: transform 0.3s ease-in-out;
+}
+
+article .text-content {
+    width: 50%;
+    /* Text content takes up the other half */
+    padding: 0 15px;
+}
+
+/* Hover effect for images */
+article .content-image:hover {
+    transform: scale(1.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    article {
+        flex-direction: column;
+        /* Stack image and text */
+    }
+
+    .content-image,
+    .text-content {
+        width: 100% !important;
+        /* Full width for both image and text */
+    }
+
+    .content-image {
+        order: 0;
+    }
+
+    article h2,
+    article p {
+        font-size: 18px;
+    }
+}
+
+/* 图片样式 */
+.content-image {
+    transition: transform 0.3s ease-in-out;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.content .image-container {
+    position: relative;
+    overflow: hidden;
+    height: 350px;
+    width: 43%;
+    border-radius: 12px;
+}
+
+.hover-text {
+    position: absolute;
+    bottom: -100%;
+    /* Initially hide the text below the image */
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    /* Semi-transparent background */
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    transition: bottom 0.5s ease;
+    /* Animate the bottom property */
+}
+
+.image-container:hover .hover-text {
+    bottom: 0;
+    /* On hover, move the text up to cover the image */
+}
+
+
+
+article.left-image,
+article.right-image {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+article.left-image .image-container {
+    order: 1;
+}
+
+article.left-image .text-content {
+    order: 2;
+    margin-left: 20px;
+}
+
+article.right-image .image-container {
+    order: 2;
+}
+
+article.right-image .text-content {
+    order: 1;
+    margin-right: 20px;
+}
+
+.image-container,
+.text-content {
+    flex: 1;
+}
+
+.image-container {
+    flex: 0 0 auto;
+}
+
+.text-content {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

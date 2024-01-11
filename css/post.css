@@ -1,0 +1,99 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #f4f4f4;
+  /* 背景色 */
+}
+
+nav ul {
+  list-style: none;
+  text-align: center;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  transition: padding 0.3s ease;
+}
+
+nav ul li:hover {
+  background: lightblue;
+  border-radius: 6px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+}
+
+nav ul li a.active {
+  color: rgb(94, 192, 224);
+  font-weight: bold;
+}
+
+.header-card {
+  display: flex;
+  /* Enable flexbox */
+  align-items: center;
+  /* Center vertically */
+  justify-content: center;
+  /* Center horizontally */
+  width: 90%;
+  height: 300px;
+  margin: 20px 0;
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header-card img {
+  width: 100%;
+  height: 100%;
+  /* 固定图片高度 */
+  object-fit: cover;
+  /* 确保图片覆盖整个容器，不失真 */
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* 半透明遮罩 */
+  z-index: 1;
+}
+
+.post-title {
+position: absolute; /* Absolute position relative to the parent .header-card */
+z-index: 2; /* Ensure it's above the overlay */
+color: white;
+font-size: 50px;
+margin: 0;
+top: 50%; /* Center vertically */
+left: 50%; /* Center horizontally */
+transform: translate(-50%, -50%); /* Offset the title by half its width and height */
+text-align: center; /* Ensure text is centered if it wraps */
+}
+
+
+.content-section {
+  width: 90%;
+  border: 2px solid #add8e6;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px 0;
+  box-sizing: border-box;
+  background: #fff;
+  /* 内容背景色 */
+}
